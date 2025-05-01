@@ -1,0 +1,458 @@
+/* Main Styles for AI Business Wealth Roadmap Tool */
+:root {
+    --pounamu-green: #1e5631;
+    --pounamu-light: #3c7a4d;
+    --pounamu-dark: #0e3c1c;
+    --pounamu-bg: rgba(30, 86, 49, 0.1);
+    --pounamu-highlight: #8bc34a;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #333333;
+    --yellow-highlight: #ffeb3b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--pounamu-green);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 5px solid var(--pounamu-highlight);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem 0;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+    color: var(--pounamu-green);
+    margin-bottom: 1rem;
+}
+
+/* Compass Tool Styles */
+.compass-tool {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.step {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.step.active {
+    display: block;
+}
+
+.step-title {
+    color: var(--pounamu-green);
+    border-bottom: 2px solid var(--pounamu-highlight);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Options Grid */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.option {
+    background-color: var(--pounamu-bg);
+    border: 2px solid var(--pounamu-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--pounamu-green);
+}
+
+.option.selected {
+    background-color: var(--pounamu-green);
+    border-color: var(--pounamu-highlight);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.option-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.option h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--pounamu-dark);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Current Situation Questions */
+.question-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--pounamu-green);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--pounamu-dark);
+}
+
+.btn-secondary {
+    background-color: var(--medium-gray);
+    color: var(--dark-gray);
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark-gray);
+    color: var(--white);
+}
+
+.btn-cta {
+    background-color: var(--pounamu-highlight);
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.btn-cta:hover {
+    background-color: var(--pounamu-green);
+    color: var(--white);
+}
+
+/* Results Styles */
+.result-box {
+    background-color: var(--pounamu-bg);
+    border-left: 4px solid var(--pounamu-green);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.roadmap-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+.roadmap-header,
+.roadmap-middle,
+.roadmap-footer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.c-circle,
+.b-circle,
+.a-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.c-circle {
+    background-color: var(--pounamu-green);
+}
+
+.b-circle {
+    background-color: var(--pounamu-light);
+}
+
+.a-circle {
+    background-color: var(--pounamu-dark);
+}
+
+.roadmap-text {
+    flex: 1;
+}
+
+.roadmap-text h3 {
+    color: var(--pounamu-green);
+    margin-bottom: 0.5rem;
+}
+
+.ladder {
+    padding-left: 40px;
+    position: relative;
+}
+
+.ladder:before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--pounamu-light);
+}
+
+.rung {
+    position: relative;
+    padding: 1rem 1rem 1rem 3rem;
+    margin-bottom: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rung:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 20px;
+    height: 4px;
+    background-color: var(--pounamu-light);
+}
+
+.rung-number {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--pounamu-green);
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.rungs-container {
+    margin-top: 3rem;
+}
+
+.rungs-container h3 {
+    color: var(--pounamu-green);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.rung-item {
+    background-color: var(--white);
+    border-left: 4px solid var(--pounamu-green);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rung-item h4 {
+    color: var(--pounamu-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.rung-number-small {
+    background-color: var(--pounamu-green);
+    color: var(--white);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.tool-name {
+    font-weight: 600;
+    color: var(--pounamu-green);
+    margin: 0.5rem 0;
+}
+
+.success-metric {
+    background-color: var(--yellow-highlight);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Call to Action */
+.call-to-action {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--pounamu-bg);
+    border-radius: 8px;
+}
+
+.call-to-action h3 {
+    color: var(--pounamu-dark);
+    margin-bottom: 1rem;
+}
+
+/* Action Buttons */
+.action-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--pounamu-dark);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .roadmap-header,
+    .roadmap-middle,
+    .roadmap-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
