@@ -456,3 +456,22 @@ footer {
         width: 100%;
     }
 }
+
+/* Disclaimer Styles */
+.disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-left: 4px solid #1e5631;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.disclaimer h3 {
+    color: #1e5631;
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer p {
+    margin-bottom: 0.5rem;
+}
