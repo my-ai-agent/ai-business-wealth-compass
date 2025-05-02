@@ -1,4 +1,4 @@
-// Data structure for AI Business Wealth Roadmap Tool
+// Data structure for AI Business Wealth Compass™ Tool
 
 const roadmapData = {
     // Time Wealth
@@ -183,7 +183,7 @@ const roadmapData = {
             },
             {
                 title: "Award Submission Automation",
-                tool: "Michael Gibbons AI Award Application Analyser Tool",
+                tool: "NZT Analyser Tool Michael Gibbons AI Business Automation Coach 2025",
                 implementation: "Craft compelling award submissions tailored to specific application question criteria",
                 metric: "40% increase in award shortlisting success"
             },
@@ -510,8 +510,8 @@ const roadmapData = {
                 metric: "87% more visibility into progress toward your goal"
             },
             {
-                title: "Personalized AI Coaching",
-                tool: "Michael Gibbons AI Business Coaching",
+                title: "Personalised AI Coaching",
+                tool: "Michael Gibbons #1 Cultural Tourism AI Strategist : Embracing Smart AI Innovation 2025",
                 implementation: "Receive ongoing guidance tailored to your unique journey",
                 metric: "63% higher success rate than self-implementation"
             }
