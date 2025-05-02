@@ -1,4 +1,4 @@
-javascript// Data structure for AI Business Wealth Roadmap Tool
+// Data structure for AI Business Wealth Roadmap Tool
 
 const roadmapData = {
     // Time Wealth
