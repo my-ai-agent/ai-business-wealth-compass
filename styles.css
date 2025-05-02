@@ -475,3 +475,31 @@ footer {
 .disclaimer p {
     margin-bottom: 0.5rem;
 }
+/* Copyright Notice and Terms of Use Styles */
+.copyright-notice {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--pounamu-bg);
+    border-left: 4px solid var(--pounamu-green);
+    border-radius: 4px;
+}
+
+.terms-of-use {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+}
+
+.terms-of-use h3 {
+    color: var(--pounamu-green);
+    margin-bottom: 0.75rem;
+}
+
+.terms-of-use ul {
+    margin-left: 1.5rem;
+}
+
+.terms-of-use li {
+    margin-bottom: 0.5rem;
+}
