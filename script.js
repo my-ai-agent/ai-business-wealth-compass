@@ -318,3 +318,71 @@ html {
   position: absolute;
   top: 0;
 }
+// Fix for navigation buttons
+function handlePreviousButton() {
+  const prevButtons = document.querySelectorAll('button:contains("Previous")');
+  prevButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const targetPage = this.getAttribute('data-target') || document.referrer || 'index.html';
+      window.location.href = targetPage + '#top';
+    });
+  });
+}
+
+// Fix for Start Over button
+function handleStartOverButton() {
+  const startOverButtons = document.querySelectorAll('button:contains("Start Over")');
+  startOverButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      window.location.href = 'index.html#top';
+    });
+  });
+}
+
+// Question type setup
+function setupQuestionTypes() {
+  // Define questions that should be single-select
+  const singleSelectContainers = document.querySelectorAll('.single-select');
+  singleSelectContainers.forEach(container => {
+    // Add instruction
+    const instruction = document.createElement('p');
+    instruction.className = 'instruction-text';
+    instruction.textContent = 'Please select ONE option:';
+    container.insertBefore(instruction, container.firstChild);
+    
+    // Convert checkboxes to radio buttons
+    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+    const groupName = container.id || 'question-group-' + Math.random().toString(36).substr(2, 9);
+    checkboxes.forEach(checkbox => {
+      checkbox.type = 'radio';
+      checkbox.name = groupName;
+    });
+  });
+  
+  // Define questions that should be multi-select
+  const multiSelectContainers = document.querySelectorAll('.multi-select');
+  multiSelectContainers.forEach(container => {
+    // Add instruction
+    const instruction = document.createElement('p');
+    instruction.className = 'instruction-text';
+    instruction.textContent = 'Select ALL that apply:';
+    container.insertBefore(instruction, container.firstChild);
+  });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Add anchor to top of body if it doesn't exist
+  if (!document.getElementById('top')) {
+    const topAnchor = document.createElement('a');
+    topAnchor.id = 'top';
+    document.body.insertBefore(topAnchor, document.body.firstChild);
+  }
+  
+  // Setup question types
+  setupQuestionTypes();
+  
+  // Setup navigation buttons
+  handlePreviousButton();
+  handleStartOverButton();
+});
