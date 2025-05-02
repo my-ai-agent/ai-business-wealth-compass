@@ -10,7 +10,7 @@ const roadmapData = {
             {
                 id: "time-spent",
                 question: "How many hours per week do you currently work in your tourism business?",
-                type: "select",
+                type: "checkbox",
                 options: ["Less than 40 hours", "40-50 hours", "50-60 hours", "60+ hours"]
             },
             {
@@ -22,7 +22,7 @@ const roadmapData = {
             {
                 id: "delegation",
                 question: "What prevents you from delegating more tasks?",
-                type: "select",
+                type: "checkbox",
                 options: ["Lack of trained staff", "Systems not documented", "Quality concerns", "Cost of additional staff", "No suitable technology solutions"]
             }
         ],
@@ -75,13 +75,13 @@ const roadmapData = {
             {
                 id: "current-margin",
                 question: "What is your tourism business's current profit margin?",
-                type: "select",
+                type: "checkbox",
                 options: ["Less than 5%", "5-10%", "10-15%", "15-20%", "Over 20%"]
             },
             {
                 id: "financial-visibility",
                 question: "How would you rate your visibility into your business finances?",
-                type: "select",
+                type: "checkbox",
                 options: ["Poor - Reactive to financial issues", "Basic - Monthly reviews", "Good - Weekly oversight", "Excellent - Real-time insights"]
             },
             {
@@ -140,13 +140,13 @@ const roadmapData = {
             {
                 id: "current-rating",
                 question: "What is your current average customer review rating?",
-                type: "select",
+                type: "checkbox",
                 options: ["Below 3 stars", "3-3.5 stars", "3.5-4 stars", "4-4.5 stars", "4.5-5 stars"]
             },
             {
                 id: "experience-consistency",
                 question: "How consistent is your visitor experience delivery?",
-                type: "select",
+                type: "checkbox",
                 options: ["Very inconsistent", "Somewhat inconsistent", "Generally consistent", "Highly consistent"]
             },
             {
@@ -205,13 +205,13 @@ const roadmapData = {
             {
                 id: "owner-dependence",
                 question: "How dependent is your tourism business on your personal involvement?",
-                type: "select",
+                type: "checkbox",
                 options: ["Completely dependent", "Highly dependent", "Somewhat dependent", "Minimally dependent"]
             },
             {
                 id: "documentation",
                 question: "How well documented are your business processes and cultural knowledge?",
-                type: "select",
+                type: "checkbox",
                 options: ["Not documented", "Partially documented", "Well documented", "Extensively documented"]
             },
             {
@@ -270,13 +270,13 @@ const roadmapData = {
             {
                 id: "longest-absence",
                 question: "What's the longest you've been able to step away from your tourism business?",
-                type: "select",
+                type: "checkbox",
                 options: ["A weekend", "Up to a week", "1-2 weeks", "3-4 weeks", "1+ month"]
             },
             {
                 id: "remote-management",
                 question: "How effectively can you currently manage your business remotely?",
-                type: "select",
+                type: "checkbox",
                 options: ["Not at all", "With difficulty", "Somewhat effectively", "Very effectively"]
             },
             {
@@ -335,13 +335,13 @@ const roadmapData = {
             {
                 id: "family-interruptions",
                 question: "How often do business matters interrupt your family time?",
-                type: "select",
+                type: "checkbox",
                 options: ["Daily", "Several times per week", "Once or twice per week", "Rarely"]
             },
             {
                 id: "work-predictability",
                 question: "How predictable is your weekly work schedule?",
-                type: "select",
+                type: "checkbox",
                 options: ["Completely unpredictable", "Somewhat unpredictable", "Generally predictable", "Very predictable"]
             },
             {
@@ -400,13 +400,13 @@ const roadmapData = {
             {
                 id: "enjoyment-ratio",
                 question: "What percentage of your work time is currently spent on aspects you truly enjoy?",
-                type: "select",
+                type: "checkbox",
                 options: ["Less than 10%", "10-30%", "30-50%", "50-70%", "More than 70%"]
             },
             {
                 id: "value-alignment",
                 question: "How well does your day-to-day work align with your cultural values?",
-                type: "select",
+                type: "checkbox",
                 options: ["Poor alignment", "Some alignment", "Good alignment", "Perfect alignment"]
             },
             {
