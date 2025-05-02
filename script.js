@@ -299,14 +299,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Fix for navigation buttons
+// Replace the handlePreviousButton function (around line 302)
 function handlePreviousButton() {
-  const prevButtons = document.querySelectorAll('button:contains("Previous")');
-  prevButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const targetPage = this.getAttribute('data-target') || document.referrer || 'index.html';
-      window.location.href = targetPage + '#top';
+    // Find all buttons
+    const allButtons = document.querySelectorAll('button');
+    
+    // Filter to find ones with "Previous" text
+    const prevButtons = Array.from(allButtons).filter(button => 
+        button.textContent.includes('Previous')
+    );
+    
+    // Add event listeners
+    // Replace the handleStartOverButton function (around line 313)
+function handleStartOverButton() {
+    // Find all buttons
+    const allButtons = document.querySelectorAll('button');
+    
+    // Filter to find ones with "Start Over" text
+    const startOverButtons = Array.from(allButtons).filter(button => 
+        button.textContent.includes('Start Over')
+    );
+    
+    // Add event listeners
+    startOverButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            window.location.href = 'index.html#top';
+        });
     });
-  });
 }
 
 // Fix for Start Over button
