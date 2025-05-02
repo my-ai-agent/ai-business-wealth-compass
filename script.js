@@ -366,3 +366,106 @@ document.addEventListener('DOMContentLoaded', function() {
   handlePreviousButton();
   handleStartOverButton();
 });
+// Add question type functionality (single vs multi select)
+function setupQuestionTypes() {
+  // Define patterns that indicate single-select questions
+  const singleSelectPatterns = [
+    "how many hours", 
+    "biggest barrier",
+    "primary concern",
+    "what is your main"
+  ];
+  
+  // Wait for questions to be dynamically added
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        // Process each question container
+        const questionContainers = document.querySelectorAll('#current-situation-questions > div');
+        
+        questionContainers.forEach(container => {
+          // Get the question text
+          const questionElement = container.querySelector('h3, p, label');
+          if (!questionElement) return;
+          
+          const questionText = questionElement.textContent.toLowerCase();
+          
+          // Determine if this should be single-select
+          const isSingleSelect = singleSelectPatterns.some(pattern => 
+            questionText.includes(pattern)
+          );
+          
+          if (isSingleSelect) {
+            // Add a marker class
+            container.classList.add('single-select');
+            
+            // Add instruction text
+            const instruction = document.createElement('p');
+            instruction.className = 'instruction-text';
+            instruction.textContent = 'Please select ONE option:';
+            container.insertBefore(instruction, questionElement.nextSibling);
+            
+            // Convert checkboxes to radio buttons
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+            const groupName = 'question-group-' + Math.random().toString(36).substring(2, 9);
+            checkboxes.forEach(checkbox => {
+              checkbox.type = 'radio';
+              checkbox.name = groupName;
+            });
+          } else {
+            // Add a marker class
+            container.classList.add('multi-select');
+            
+            // Add instruction text
+            const instruction = document.createElement('p');
+            instruction.className = 'instruction-text';
+            instruction.textContent = 'Select ALL that apply:';
+            container.insertBefore(instruction, questionElement.nextSibling);
+          }
+        });
+      }
+    });
+  });
+  
+  // Start observing the questions container
+  const questionsContainer = document.getElementById('current-situation-questions');
+  if (questionsContainer) {
+    observer.observe(questionsContainer, { childList: true, subtree: true });
+  }
+}
+// Fix the Previous button behavior
+function fixPreviousButtons() {
+  const prevButtons = document.querySelectorAll('#prev-step2, #prev-step3');
+  prevButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Give time for the navigation to happen
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 50);
+    });
+  });
+}
+
+// Fix the Start Over button
+function fixStartOverButton() {
+  const restartButton = document.getElementById('restart');
+  if (restartButton) {
+    restartButton.addEventListener('click', function() {
+      window.location.href = 'index.html#top';
+    });
+  }
+}
+// Initialize all features when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Add a top anchor if not present
+  if (!document.getElementById('top')) {
+    const topAnchor = document.createElement('a');
+    topAnchor.id = 'top';
+    document.body.insertBefore(topAnchor, document.body.firstChild);
+  }
+  
+  // Setup all enhancements
+  setupQuestionTypes();
+  fixPreviousButtons();
+  fixStartOverButton();
+});
