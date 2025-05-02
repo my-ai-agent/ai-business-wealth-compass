@@ -297,27 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('step1').classList.add('active');
     });
 });
-/* Add smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
 
-/* Style for instruction text */
-.instruction-text {
-  font-weight: bold;
-  color: #1b5e20;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-}
-
-/* Make top anchor invisible */
-#top {
-  height: 0;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-}
 // Fix for navigation buttons
 function handlePreviousButton() {
   const prevButtons = document.querySelectorAll('button:contains("Previous")');
