@@ -474,6 +474,45 @@ function fixStartOverButton() {
     });
   }
 }
+   
+}
+    // Fix the Next button
+function fixNextButton() {
+    // Find all buttons
+    const allButtons = document.querySelectorAll('button');
+    
+    // Filter to find ones with "Next" text
+    const nextButtons = Array.from(allButtons).filter(button => 
+        button.textContent.includes('Next')
+    );
+    
+    // Add event listeners
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            console.log('Next button clicked');
+            
+            // Find current active step
+            const step1Active = document.getElementById('step1').classList.contains('active');
+            const step2Active = document.getElementById('step2').classList.contains('active');
+            const step3Active = document.getElementById('step3').classList.contains('active');
+            
+            // Navigate to appropriate next step
+            if (step1Active) {
+                document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                document.getElementById('step2').classList.add('active');
+            } else if (step2Active) {
+                document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                document.getElementById('step3').classList.add('active');
+            } else if (step3Active) {
+                document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                document.getElementById('results').classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+    });
+}
 // Initialize all features when the page loads
 document.addEventListener('DOMContentLoaded', function() {
   // Add a top anchor if not present
@@ -487,4 +526,5 @@ document.addEventListener('DOMContentLoaded', function() {
   setupQuestionTypes();
   fixPreviousButtons();
   fixStartOverButton();
+    fixNextButton();
 });
